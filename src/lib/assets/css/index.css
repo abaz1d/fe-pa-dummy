@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@plugin 'daisyui';
+
+@theme {
+	--color-primary: #0d9488;
+	--color-primary-dark: #115e59;
+	--color-primary-light: #ccfbf1;
+}
+
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+
+* {
+	font-family: 'Inter', sans-serif;
+}
+
+button {
+	cursor: pointer;
+	transition: transform 100ms ease-in-out;
+}
+
+button:active {
+	transform: scale(0.97);
+}
+
+@keyframes pulse-rec {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+.animate-pulse-rec {
+	animation: pulse-rec 1s infinite;
+}
+
+/* Table global style — matches card look across dashboard & users page */
+.app-table {
+	border-radius: 16px;
+	overflow: hidden;
+	background-color: #ffffff;
+	border: 1px solid #e2e8f0;
+}
+
+.app-table thead {
+	background-color: #f8fafc;
+}
+
+.app-table thead th {
+	padding: 12px 16px;
+	font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	color: #64748b;
+	text-align: left;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.app-table tbody td {
+	padding: 14px 16px;
+	font-size: 14px;
+}
+
+.app-table tbody tr:hover {
+	background-color: #f8fafc;
+}
+
+.app-table tbody tr:not(:last-child) td {
+	border-bottom: 1px solid #e2e8f0;
+}
+
+/* Responsive table -> cards on small screens */
+@media (max-width: 768px) {
+	.app-table-wrapper {
+		overflow-x: hidden;
+		background: transparent !important;
+		border: none !important;
+	}
+	.app-table,
+	.app-table tbody,
+	.app-table tr,
+	.app-table td {
+		display: block;
+		width: 100%;
+	}
+	.app-table thead {
+		display: none;
+	}
+	.app-table tr {
+		background: #fff !important;
+		border: 1px solid #e2e8f0 !important;
+		border-radius: 12px;
+		margin-bottom: 14px;
+		padding: 14px 16px 6px 16px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	}
+	.app-table td {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border: none !important;
+		padding: 8px 0 !important;
+		text-align: right;
+	}
+	.app-table td:not(:last-child) {
+		border-bottom: 1px solid #f1f5f9 !important;
+	}
+	.app-table td::before {
+		content: attr(data-label);
+		font-weight: 600;
+		font-size: 12.5px;
+		color: #64748b;
+		text-align: left;
+	}
+}
