@@ -140,7 +140,7 @@
 						type="email"
 						bind:value={email}
 						placeholder="nama@perusahaan.com"
-						class="input w-full rounded-[10px] border border-slate-200 px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-teal-600"
+						class="w-full rounded-[10px] border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-teal-600"
 					/>
 				</div>
 
@@ -154,7 +154,7 @@
 							type={showPass ? 'text' : 'password'}
 							bind:value={password}
 							placeholder="Masukkan password"
-							class="input w-full rounded-[10px] border border-slate-200 px-3.5 py-2.5 pr-12 text-sm text-slate-800 outline-none focus:border-teal-600"
+							class="w-full rounded-[10px] border border-slate-200 bg-white px-3.5 py-2.5 pr-12 text-sm text-slate-800 outline-none focus:border-teal-600"
 						/>
 						<button
 							type="button"
@@ -168,7 +168,11 @@
 
 				<div class="flex items-center justify-between">
 					<label class="flex items-center gap-2">
-						<input type="checkbox" bind:checked={remember} class="checkbox h-4 w-4 accent-teal-600" />
+						<input
+							type="checkbox"
+							bind:checked={remember}
+							class="h-4 w-4 rounded border-slate-300 accent-teal-600"
+						/>
 						<span class="text-[13px] font-medium text-slate-500">Remember me</span>
 					</label>
 					<a href="#forgot" onclick={(e) => e.preventDefault()} class="text-[13px] font-semibold text-teal-600">
